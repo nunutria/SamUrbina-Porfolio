@@ -1,0 +1,41 @@
+---
+import Heading from "./Heading.astro";
+
+const heading = "Te puedo ayudar con";
+
+const sections = [
+  "Página web estática",
+  "Backend",
+  "Páginas web dinámicas",
+];
+const sectionsText = [
+  "Puedo crearte un sitio estático personalizado usando Astro. Los sitios estáticos son rápidos, seguros y fáciles de mantener.",
+  "Backend personalizado y escalable utilizando las últimas tecnologías. Tu backend será robusto y te permitirá ofrecer una experiencia de usuario eficiente.",
+  "Diseñadas a medida para reflejar la identidad de tu marca con funcionalidades para que tu sitio web sea atractivo, informativo y fácil de usar.",
+];
+---
+<div id='habilidades' class="mb-12 bg-stone-100 dark:bg-slate-800">
+    <Heading heading={heading} />
+    <div class="py-2 px-4 mx-auto max-w-screen-xl sm:py-3 lg:px-3">
+      <div
+        class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+      >
+        {
+          sections.map((section) => {
+            return (
+              <div class="flex flex-col">
+                <div class="mt-1">
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                    {sections[sections.indexOf(section)]}
+                  </h3>
+                  <p class="text-lg text-gray-700 dark:text-gray-400">
+                    {sectionsText[sections.indexOf(section)]}
+                  </p>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>

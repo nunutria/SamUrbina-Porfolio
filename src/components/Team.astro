@@ -1,0 +1,164 @@
+---
+import Heading from "./Heading.astro";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro"
+const title = "Tecnologias y Herramientas";
+
+//icons Backend
+import flask from "../assets/technologies/flask.svg";
+import laravel from "../assets/technologies/laravel.svg";
+import python from "../assets/technologies/python.svg";
+//icons frontend
+import javascript from '../assets/technologies/javascript.svg'
+import vuejs from '../assets/technologies/vuejs.svg'
+import astro from '../assets/technologies/astro.svg'
+import bootstrap from '../assets/technologies/bootstrap.svg'
+import tailwind from '../assets/technologies/tailwind.svg'
+//icons databases
+import mysql from '../assets/technologies/mysql.svg'
+import postgresql from'../assets/technologies/postgresql.svg'
+import mariaDB from '../assets/technologies/mariadb.svg'
+//icons tools
+import git from '../assets/technologies/git.svg'
+import photoshop from '../assets/technologies/photoshop.svg'
+import docker from '../assets/technologies/docker.svg'
+const iconBackend =[
+   {
+    "title": "Flask",
+    "href": flask,
+   },
+   {
+    "title": "Laravel",
+    "href": laravel,
+   },
+   {
+    "title": "Python",
+    "href": python,
+   } 
+  ]
+
+  const iconFrontend =[
+    {
+     "title": "JavaScript",
+     "href": javascript
+    },
+    {
+     "title": "Vuejs",
+     "href": vuejs
+    },
+    {
+     "title": "Astro",
+     "href": astro
+    },
+    {
+      "title": "Tailwind",
+      "href": tailwind
+    },
+    {
+      "title": "Bootstrap",
+      "href": bootstrap
+    }
+   ]
+   const iconTools = [
+    {
+     "title": "Git",
+     "href": git
+    },
+    {
+     "title": "Photoshop",
+     "href": photoshop
+    },
+    {
+     "title": "Docker",
+     "href": docker
+    }
+   ]
+   const iconDatabase = [
+    {
+     "title": "Git",
+     "href": mysql
+    },
+    {
+     "title": "PostgreSQL",
+     "href": postgresql
+    },
+    {
+     "title": "MariaDB",
+     "href": mariaDB
+    }
+   ]
+---
+
+
+
+<section id="tecnologias">
+  <Heading heading="Tecnologias" />
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-4 ">
+  <div>
+    <h1 class="mb-1 text-center text-xl font-medium text-slate-900 dark:text-slate-200 lg:text-left" >Frontend</h1>
+      <div class="h-28 flex rounded-lg bg-gray-200 dark:bg-gray-700">
+        {
+          iconFrontend.map((card) => (
+            <div class="flex mx-auto">
+              <Image
+                src={card.href}
+                alt={card.title}
+                class="w-11 mx-2 my-2 lg:w-8/12 select-none"
+              />
+          </div>
+        ))
+      }
+      </div>
+  </div>
+
+  <div>
+    <h1 class="mb-1 text-center text-xl font-medium text-slate-900 dark:text-slate-200 lg:text-left" >Backend</h1>
+      <div class="h-28 flex rounded-lg bg-gray-200 dark:bg-gray-700">
+        {
+          iconBackend.map((card) => (
+            <div class="flex mx-auto">
+              <Image
+                src={card.href}
+                alt={card.title}
+                class="w-11 mx-2 my-2 lg:w-8/12 select-none"
+              />
+          </div>
+        ))
+      }
+      </div>
+  </div>
+  <div>
+    <h1 class="mb-1 text-center text-xl font-medium text-slate-900 dark:text-slate-200 lg:text-left" >Bases de Datos</h1>
+      <div class="h-28 flex rounded-lg bg-gray-200 dark:bg-gray-700">
+        {
+          iconDatabase.map((card) => (
+            <div class="flex mx-auto">
+              <Image
+                src={card.href}
+                alt={card.title}
+                class="w-11 mx-2 my-2 lg:w-8/12 select-none"
+              />
+          </div>
+        ))
+      }
+      </div>
+  </div>
+  <div>
+    <h1 class="mb-1 text-center text-xl font-medium text-slate-900 dark:text-slate-200 lg:text-left" >Herraminetas</h1>
+      <div class="h-28 flex rounded-lg bg-gray-200 dark:bg-gray-700">
+        {
+          iconTools.map((card) => (
+            <div class="flex mx-auto">
+              <Image
+                src={card.href}
+                alt={card.title}
+                class="w-11 mx-2 my-2 lg:w-8/12 select-none"
+              />
+          </div>
+        ))
+      }
+      </div>
+  </div>
+</div>
+
+</section>

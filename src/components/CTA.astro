@@ -1,0 +1,16 @@
+---
+// import the Image component and the image
+import { Image } from 'astro:assets';
+import imageCode from "../../public/code.webp"; 
+const title = "Más allá de las herramientas y frameworks:"
+const body = "Con 2 años de experiencia en el desarrollo de aplicaciones web de alta calidad, mi pasión por la tecnología me impulsa a ir más allá de las herramientas y frameworks. Me considero un aprendiz constante, siempre en busca de nuevas técnicas y soluciones innovadoras para optimizar el desarrollo y ofrecer una experiencia de usuario excepcional."
+---
+<section id='aboutme' class="mb-12 bg-stone-100 dark:bg-slate-800">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{title}</h2>
+            <p class="mb-8 mt-2 text-lg text-gray-700 dark:text-gray-400">{body}</p>
+        </div>
+        <Image src={imageCode} class="w-full" alt="Code of succes" />
+    </div>
+</section>

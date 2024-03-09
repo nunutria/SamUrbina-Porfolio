@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+//icons dark
+import github_dark from '../../public/Icons/dark/github.svg'
+import linkedIn_dark from '../../public/Icons/dark/linkedIn.svg'
+import gmail_dark from '../../public/Icons/dark/gmail.svg'
+//icons light
+import github_light from '../../public/Icons/light/github-light.svg'
+import linkedIn_light from '../../public/Icons/light/linkedIn-light.svg'
+import gmail_light from '../../public/Icons/light/gmail-light.svg'
+// url
+const github = 'https://github.com/nunutria'
+const linkedIn = 'https://www.linkedin.com/in/samuel-urbina-b126402a3/'
+const mail = 'mailto:samuelurbina3635@gmail.com'
+const contact_dark = [
+  { 
+    name: 'GitHub',
+    icon: github_dark,
+    url: github,
+  },
+  { 
+    name: 'LinkedIn',
+    icon: linkedIn_dark,
+    url: linkedIn,
+  },
+  { 
+    name: 'Correo',
+    icon: gmail_dark,
+    url: mail,
+  },
+];
+const contact_light = [
+{ 
+    name: 'GitHub',
+    icon: github_light,
+    url: github,
+  },
+  { 
+    name: 'LinkedIn',
+    icon: linkedIn_light,
+    url: linkedIn,
+  },
+  { 
+    name: 'Correo',
+    icon: gmail_light,
+    url: mail,
+  },
+];
+---
+{
+  contact_dark.map((contact) =>(
+<div class="relative overflow-hidden dark:hidden">
+  <div class="flex items-start lg:items-center ">
+      <Image class="w-6 h-6" src={contact.icon} alt={contact.name} />
+      <p class="ml-2 text-sm font-normal leading-6 text-gray-900 dark:text-white">
+          <a href={contact.url} title={contact.name} target=“_blank“ rel=“nofollow“>
+              {contact.name}
+              <span class="absolute inset-0" aria-hidden="true"></span>
+          </a>
+      </p>
+  </div>
+</div>
+))
+}
+
+{
+  contact_light.map((contact) =>(
+<div class="relative overflow-hidden hidden dark:block">
+  <div class="flex items-start lg:items-center ">
+      <Image class="w-6 h-6" src={contact.icon} alt={contact.name} />
+      <p class="ml-2 text-sm font-normal leading-6 text-gray-900 dark:text-white">
+        <a href={contact.url} title={contact.name} target=“_blank“ rel=“nofollow“>
+              {contact.name}
+              <span class="absolute inset-0" aria-hidden="true"></span>
+          </a>
+      </p>
+  </div>
+</div>
+))
+}
